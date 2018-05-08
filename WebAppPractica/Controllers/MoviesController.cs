@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebAppPractica.Models;
+using WebAppPractica.ViewModels;
 
 namespace WebAppPractica.Controllers
 {
@@ -13,7 +14,20 @@ namespace WebAppPractica.Controllers
         public ActionResult Random()
         {
             var movie = new Movie() { name = "L4D2" };
-            return View(movie);
+            //otras alternativas para pasar datos a la vista pero en realidad son un dolor mantenerlas
+            //ViewData["Movie"] = movie;
+            //ViewBag.Movie = movie;
+            var customers = new List<Customer> {
+                new Customer{ id = 1, name = "Kevin" },
+                new Customer{ id = 2, name = "Tita" }
+            };
+
+            var viewModel = new RandomMovieViewModel{
+                Movie = movie,
+                Customers = customers
+            };
+       
+            return View( viewModel );
         }
 
         public ActionResult Edit( int id) {

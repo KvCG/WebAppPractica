@@ -1,8 +1,36 @@
-﻿@model WebAppPractica.Models.Movie
+﻿@model WebAppPractica.ViewModels.RandomMovieViewModel
 @{
     ViewBag.Title = "Random";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.name</h2>
+@*
+MultiLine 
+    Comment
+*@
+
+
+@{
+    var className = Model.Customers.Count > 0 ?"Popular" : null;
+}
+
+<h2 class="@className">@Model.Movie.name</h2>
+
+@if (Model.Customers.Count == 0)
+{
+    //<p>No se ha rentado esta pelicula</p>
+    <text>No se ha rentado esta pelicula</text> //Renderiza el texto sin tag
+}
+else
+{
+    <ul>
+        @foreach (var customer in Model.Customers)
+        {
+            <li>@customer.name</li>
+        }
+    </ul>
+}
+
+
+
 
