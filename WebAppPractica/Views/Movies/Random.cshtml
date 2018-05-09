@@ -5,13 +5,13 @@
 }
 
 @*
-MultiLine 
-    Comment
+    MultiLine
+        Comment
 *@
 
 
 @{
-    var className = Model.Customers.Count > 0 ?"Popular" : null;
+    var className = Model.Customers.Count > 0 ? "Popular" : null;
 }
 
 <h2 class="@className">@Model.Movie.name</h2>

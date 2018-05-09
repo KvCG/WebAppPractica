@@ -13,7 +13,7 @@ namespace WebAppPractica
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapMvcAttributeRoutes();
+            routes.MapMvcAttributeRoutes(); //Activa los atributos de las rutas para ponerlas en los controllers
 
             routes.MapRoute(
                 name: "Default",

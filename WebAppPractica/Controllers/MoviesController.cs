@@ -34,7 +34,7 @@ namespace WebAppPractica.Controllers
             return Content("ID = " + id);
         }
 
-        public ActionResult Index(int? pageIndex, string sortBy) {
+        public ActionResult Index(int? pageIndex, string sortBy) {// pageIndex es opcional
             if (!pageIndex.HasValue)
                 pageIndex = 1;
 
